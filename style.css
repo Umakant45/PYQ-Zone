@@ -126,3 +126,44 @@ footer b {
   border: none;
   border-radius: 10px;
 }
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+
+  .company-grid,
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .company-card,
+  .category-card {
+    padding: 15px;
+  }
+
+  .company-card img,
+  .category-card img {
+    width: 60px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .company-grid,
+  .category-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .company-card img,
+  .category-card img {
+    width: 70px;
+  }
+}
