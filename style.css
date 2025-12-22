@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f2f6fc;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin: 30px 0 15px;
+  color: #1e3a8a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px 40px;
+  flex-grow: 1;
+}
+
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.box img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+
+.box p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.question-area {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+footer {
+  background: #1e293b;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+footer b {
+  color: #60a5fa;
+}
+/* Smaller company boxes */
+.grid .box {
+  max-width: 200px;
+  padding: 20px;
+  margin: auto;
+}
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #2563eb;
+  font-weight: 600;
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+.question-area iframe {
+  border: none;
+  border-radius: 10px;
+}
