@@ -1,170 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-/* ==================== CSS Variables ==================== */
-:root {
-  --background: #f5f7fa;
-  --foreground: #1a2332;
-  --card: #ffffff;
-  --card-foreground: #1a2332;
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --secondary: #14b8a6;
-  --accent: #7c3aed;
-  --muted: #e8ecf1;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
-  --radius: 1rem;
-  
-  --gradient-hero: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #14b8a6 100%);
-  --gradient-text: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
-  --shadow-card: 0 4px 20px -4px rgba(37, 99, 235, 0.15);
-  --shadow-card-hover: 0 20px 40px -8px rgba(37, 99, 235, 0.25);
-}
-
-/* ==================== Reset & Base ==================== */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* ========== RESET & BASE ========== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background: var(--background);
-  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 20px;
+  color: #333;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  overflow-x: hidden;
 }
 
-/* ==================== Background Decorations ==================== */
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-body::before {
-  width: 400px;
-  height: 400px;
-  background: rgba(37, 99, 235, 0.1);
-  top: -100px;
-  left: -100px;
-}
-
-body::after {
-  width: 400px;
-  height: 400px;
-  background: rgba(20, 184, 166, 0.1);
-  bottom: -100px;
-  right: -100px;
-}
-
-/* ==================== Header ==================== */
+/* ========== HEADER ========== */
 header {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
   text-align: center;
-  padding: 3rem 1.5rem 2rem;
-  animation: fadeUp 0.6s ease-out;
+  animation: fadeInDown 0.6s ease;
 }
 
 header h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-header .subtitle,
-header p {
-  font-size: 1.125rem;
-  color: var(--muted-foreground);
-  max-width: 600px;
-  margin: 0 auto;
-  animation: fadeUp 0.6s ease-out 0.1s both;
-}
-
-/* ==================== Section Titles ==================== */
-h2 {
-  text-align: center;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 15px;
   font-weight: 700;
-  color: var(--foreground);
-  margin: 2rem 0;
-  animation: fadeUp 0.6s ease-out 0.2s both;
 }
 
-/* ==================== Grid Layout ==================== */
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ========== HEADINGS ========== */
+h2 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+#heading {
+  background: white;
+  color: #667eea;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* ========== BACK BUTTON ========== */
+.back-btn {
+  display: inline-block;
+  background: white;
+  color: #667eea;
+  padding: 12px 24px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(-5px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* ========== GRID LAYOUT ========== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 3rem;
+  margin: 0 auto 50px;
+  padding: 0 10px;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-/* ==================== Company/Category Cards ==================== */
+/* ========== COMPANY/CATEGORY BOXES ========== */
 .box {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  padding: 30px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  border: 1px solid transparent;
 }
 
 .box::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: var(--gradient-hero);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-.box:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: var(--primary);
+  z-index: 0;
 }
 
 .box:hover::before {
-  opacity: 0.05;
+  opacity: 0.1;
+}
+
+.box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
 }
 
 .box img {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  margin: 0 auto 1rem;
-  border-radius: 0.75rem;
-  background: var(--muted);
-  padding: 0.75rem;
-  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+  border-radius: 12px;
   position: relative;
   z-index: 1;
+  transition: transform 0.3s ease;
 }
 
 .box:hover img {
@@ -172,132 +142,55 @@ h2 {
 }
 
 .box p {
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--card-foreground);
-  margin: 0;
+  color: #333;
   position: relative;
   z-index: 1;
-  transition: color 0.3s ease;
+  margin-top: 10px;
 }
 
-.box:hover p {
-  color: var(--primary);
+/* ========== QUESTIONS AREA ========== */
+.question-area {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
-/* Animated underline on hover */
-.box::after {
-  content: '';
-  position: absolute;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: var(--gradient-hero);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.box:hover::after {
-  width: 60px;
-}
-
-/* Staggered animation for cards */
-.box:nth-child(1) { animation: fadeUp 0.5s ease-out 0.1s both; }
-.box:nth-child(2) { animation: fadeUp 0.5s ease-out 0.2s both; }
-.box:nth-child(3) { animation: fadeUp 0.5s ease-out 0.3s both; }
-.box:nth-child(4) { animation: fadeUp 0.5s ease-out 0.4s both; }
-.box:nth-child(5) { animation: fadeUp 0.5s ease-out 0.5s both; }
-
-/* ==================== Back Button ==================== */
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  margin: 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
-  background: transparent;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.back-btn:hover {
-  color: var(--foreground);
-  background: var(--muted);
-}
-
-.back-btn:hover::before {
-  transform: translateX(-4px);
-}
-
-/* ==================== Questions Page ==================== */
-#heading {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 800;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 1.5rem 2rem;
-}
-
-.question-area,
 #questions {
-  max-width: 1000px;
-  margin: 0 auto 3rem;
-  padding: 0 1.5rem;
+  white-space: pre-wrap;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
 }
 
-#questions iframe {
-  width: 100%;
-  height: 650px;
-  border: none;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  background: var(--card);
-}
-
-/* PDF container styling */
-#questions {
-  background: var(--card);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  animation: scaleIn 0.4s ease-out;
-}
-
-/* ==================== Footer ==================== */
+/* ========== FOOTER ========== */
 footer {
-  margin-top: auto;
-  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border);
-}
-
-footer p {
-  font-size: 0.875rem;
-  color: var(--muted-foreground);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #666;
 }
 
 footer b {
-  color: var(--foreground);
-  font-weight: 600;
+  color: #667eea;
+  font-weight: 700;
 }
 
-/* ==================== Animations ==================== */
-@keyframes fadeUp {
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -305,123 +198,79 @@ footer b {
   }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* ==================== Responsive Design ==================== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
-  header {
-    padding: 2rem 1rem 1.5rem;
-  }
-  
   header h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
   
-  header .subtitle,
-  header p {
+  .subtitle {
     font-size: 1rem;
   }
   
+  h2 {
+    font-size: 1.5rem;
+  }
+  
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 0 1rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
   }
   
   .box {
-    padding: 1.5rem 1rem;
+    padding: 20px 15px;
   }
   
   .box img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
   
   .box p {
     font-size: 1rem;
   }
   
-  #questions iframe {
-    height: 500px;
+  .question-area {
+    padding: 25px;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  header {
+    padding: 25px 20px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
   .grid {
     grid-template-columns: 1fr;
   }
   
-  .box {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-align: left;
-    padding: 1rem 1.25rem;
-  }
-  
-  .box img {
-    margin: 0;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .box::after {
-    display: none;
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
 
-/* ==================== Utility Classes ==================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+/* ========== LOADING STATES ========== */
+.box:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
 }
 
-.text-gradient {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ========== ACCESSIBILITY ========== */
+.box:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 4px;
 }
 
-/* ==================== Selection Styling ==================== */
-::selection {
-  background: var(--primary);
-  color: white;
-}
-
-/* ==================== Scrollbar Styling ==================== */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--muted);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
+.back-btn:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 4px;
 }
