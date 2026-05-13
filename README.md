@@ -101,12 +101,11 @@ Save time searching materials online
 🌐 Live Website
 Add your GitHub Pages link here:
 https://github.com/Umakant45/PYQ-Zone
-📸 Preview
-Screenshot 2026-05-13 082435.png
 
 🧑‍💻 Author
 Created by Umakant Kautkar
 https://www.linkedin.com/in/umakant-kautkar-6a0180312/
+
 ⭐ Future Improvements
 
 
